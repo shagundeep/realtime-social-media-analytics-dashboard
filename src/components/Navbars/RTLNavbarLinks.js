@@ -39,7 +39,7 @@ export default function RTLNavbarLinks() {
 
   return (
     <div>
-      <div className={classes.searchWrapper}>
+      {/* <div className={classes.searchWrapper}>
         <CustomInput
           formControlProps={{
             className: classes.margin + " " + classes.search
@@ -156,7 +156,7 @@ export default function RTLNavbarLinks() {
         <Hidden mdUp implementation="css">
           <p className={classes.linkText}>حساب کاربری</p>
         </Hidden>
-      </Button>
+      </Button> */}
     </div>
   );
 }

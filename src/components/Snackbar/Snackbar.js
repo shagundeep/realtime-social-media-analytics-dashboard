@@ -33,32 +33,33 @@ export default function Snackbar(props) {
     ];
   }
   return (
-    <Snack
-      anchorOrigin={{
-        vertical: place.indexOf("t") === -1 ? "bottom" : "top",
-        horizontal:
-          place.indexOf("l") !== -1
-            ? "left"
-            : place.indexOf("c") !== -1
-            ? "center"
-            : "right"
-      }}
-      open={open}
-      message={
-        <div>
-          {icon !== undefined ? <props.icon className={classes.icon} /> : null}
-          <span className={messageClasses}>{message}</span>
-        </div>
-      }
-      action={action}
-      ContentProps={{
-        classes: {
-          root: classes.root + " " + classes[color],
-          message: classes.message,
-          action: classNames({ [classes.actionRTL]: rtlActive })
-        }
-      }}
-    />
+    <div></div>
+    // <Snack
+    //   anchorOrigin={{
+    //     vertical: place.indexOf("t") === -1 ? "bottom" : "top",
+    //     horizontal:
+    //       place.indexOf("l") !== -1
+    //         ? "left"
+    //         : place.indexOf("c") !== -1
+    //         ? "center"
+    //         : "right"
+    //   }}
+    //   open={open}
+    //   message={
+    //     <div>
+    //       {icon !== undefined ? <props.icon className={classes.icon} /> : null}
+    //       <span className={messageClasses}>{message}</span>
+    //     </div>
+    //   }
+    //   action={action}
+    //   ContentProps={{
+    //     classes: {
+    //       root: classes.root + " " + classes[color],
+    //       message: classes.message,
+    //       action: classNames({ [classes.actionRTL]: rtlActive })
+    //     }
+    //   }}
+    // />
   );
 }
 
