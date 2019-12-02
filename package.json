@@ -22,6 +22,7 @@
     "react-d3-cloud": "^0.7.0",
     "react-dom": "16.9.0",
     "react-dropdown": "^1.6.4",
+    "react-google-charts": "^3.0.15",
     "react-google-maps": "9.4.5",
     "react-minimal-pie-chart": "^6.0.0",
     "react-router-dom": "5.0.1",
