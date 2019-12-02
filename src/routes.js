@@ -60,7 +60,23 @@ const dashboardRoutes = [
     icon: Person,
     component: TableList,
     layout: "/admin"
-  }
+  },
+  {
+    path: "/keywords",
+    name: "Keywords",
+    rtlName: "لوحة القيادة",
+    icon: Dashboard,
+    component: NotificationsPage,
+    layout: "/admin"
+  },
+  {
+    path: "/heatMap",
+    name: "Heat Map",
+    rtlName: "لوحة القيادة",
+    icon: Dashboard,
+    component: Maps,
+    layout: "/admin"
+  },
 ];
 
 export default dashboardRoutes;
