@@ -4,6 +4,7 @@ import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 import moment from "moment";
 import MenuItem from "@material-ui/core/MenuItem";
+import Select from 'react-select';
 import MenuList from "@material-ui/core/MenuList";
 import Grow from "@material-ui/core/Grow";
 import Paper from "@material-ui/core/Paper";
@@ -23,6 +24,12 @@ import Button from "components/CustomButtons/Button.js";
 import styles from "assets/jss/material-dashboard-react/components/headerLinksStyle.js";
 
 const useStyles = makeStyles(styles);
+const options = [
+  { value: 'last 3 months', label: 'last 3 months' },
+  { value: 'last 6 months', label: 'last 6 months' },
+  { value: 'last 1 year', label: 'last 1 year' },
+  { value: 'last 2 year', label: 'last 2 year' },
+];
 
 export default function AdminNavbarLinks() {
   const classes = useStyles();
@@ -51,176 +58,182 @@ export default function AdminNavbarLinks() {
  
   return (
     <div>
-      {/* <div className={classes.searchWrapper}>
-        <CustomInput
-          formControlProps={{
-            className: classes.margin + " " + classes.search
-          }}
-          inputProps={{
-            placeholder: "Search",
-            inputProps: {
-              "aria-label": "Search"
-            }
-          }}
-        />
-        <Button color="white" aria-label="edit" justIcon round>
-          <Search />
-        </Button>
+      <Select 
+        value={0}
+        placeholder="Select Dates"
+        onChange={()=>{console.log("ppp")}}
+        options={options}
+      />
       </div>
-      <Button
-        color={window.innerWidth > 959 ? "transparent" : "white"}
-        justIcon={window.innerWidth > 959}
-        simple={!(window.innerWidth > 959)}
-        aria-label="Dashboard"
-        className={classes.buttonLink}
-      >
-        <Dashboard className={classes.icons} />
-        <Hidden mdUp implementation="css">
-          <p className={classes.linkText}>Dashboard</p>
-        </Hidden>
-      </Button>
-      <div className={classes.manager}>
-        <Button
-          color={window.innerWidth > 959 ? "transparent" : "white"}
-          justIcon={window.innerWidth > 959}
-          simple={!(window.innerWidth > 959)}
-          aria-owns={openNotification ? "notification-menu-list-grow" : null}
-          aria-haspopup="true"
-          onClick={handleClickNotification}
-          className={classes.buttonLink}
-        >
-          <Notifications className={classes.icons} />
-          <span className={classes.notifications}>5</span>
-          <Hidden mdUp implementation="css">
-            <p onClick={handleCloseNotification} className={classes.linkText}>
-              Notification
-            </p>
-          </Hidden>
-        </Button>
-        <Poppers
-          open={Boolean(openNotification)}
-          anchorEl={openNotification}
-          transition
-          disablePortal
-          className={
-            classNames({ [classes.popperClose]: !openNotification }) +
-            " " +
-            classes.popperNav
-          }
-        >
-          {({ TransitionProps, placement }) => (
-            <Grow
-              {...TransitionProps}
-              id="notification-menu-list-grow"
-              style={{
-                transformOrigin:
-                  placement === "bottom" ? "center top" : "center bottom"
-              }}
-            >
-              <Paper>
-                <ClickAwayListener onClickAway={handleCloseNotification}>
-                  <MenuList role="menu">
-                    <MenuItem
-                      onClick={handleCloseNotification}
-                      className={classes.dropdownItem}
-                    >
-                      Mike John responded to your email
-                    </MenuItem>
-                    <MenuItem
-                      onClick={handleCloseNotification}
-                      className={classes.dropdownItem}
-                    >
-                      You have 5 new tasks
-                    </MenuItem>
-                    <MenuItem
-                      onClick={handleCloseNotification}
-                      className={classes.dropdownItem}
-                    >
-                      You{"'"}re now friend with Andrew
-                    </MenuItem>
-                    <MenuItem
-                      onClick={handleCloseNotification}
-                      className={classes.dropdownItem}
-                    >
-                      Another Notification
-                    </MenuItem>
-                    <MenuItem
-                      onClick={handleCloseNotification}
-                      className={classes.dropdownItem}
-                    >
-                      Another One
-                    </MenuItem>
-                  </MenuList>
-                </ClickAwayListener>
-              </Paper>
-            </Grow>
-          )}
-        </Poppers>
-      </div>
-      <div className={classes.manager}>
-        <Button
-          color={window.innerWidth > 959 ? "transparent" : "white"}
-          justIcon={window.innerWidth > 959}
-          simple={!(window.innerWidth > 959)}
-          aria-owns={openProfile ? "profile-menu-list-grow" : null}
-          aria-haspopup="true"
-          onClick={handleClickProfile}
-          className={classes.buttonLink}
-        >
-          <Person className={classes.icons} />
-          <Hidden mdUp implementation="css">
-            <p className={classes.linkText}>Profile</p>
-          </Hidden>
-        </Button>
-        <Poppers
-          open={Boolean(openProfile)}
-          anchorEl={openProfile}
-          transition
-          disablePortal
-          className={
-            classNames({ [classes.popperClose]: !openProfile }) +
-            " " +
-            classes.popperNav
-          }
-        >
-          {({ TransitionProps, placement }) => (
-            <Grow
-              {...TransitionProps}
-              id="profile-menu-list-grow"
-              style={{
-                transformOrigin:
-                  placement === "bottom" ? "center top" : "center bottom"
-              }}
-            >
-              <Paper>
-                <ClickAwayListener onClickAway={handleCloseProfile}>
-                  <MenuList role="menu">
-                    <MenuItem
-                      onClick={handleCloseProfile}
-                      className={classes.dropdownItem}
-                    >
-                      Profile
-                    </MenuItem>
-                    <MenuItem
-                      onClick={handleCloseProfile}
-                      className={classes.dropdownItem}
-                    >
-                      Settings
-                    </MenuItem>
-                    <Divider light />
-                    <MenuItem
-                      onClick={handleCloseProfile}
-                      className={classes.dropdownItem}
-                    >
-                      Logout
-                    </MenuItem>
-                  </MenuList>
-                </ClickAwayListener>
-              </Paper>
-            </Grow>
-          )}
-        </Poppers>
-      </div> */}
-    </div>
+      // /* <div className={classes.searchWrapper}>
+      //   <CustomInput
+      //     formControlProps={{
+      //       className: classes.margin + " " + classes.search
+      //     }}
+      //     inputProps={{
+      //       placeholder: "Search",
+      //       inputProps: {
+      //         "aria-label": "Search"
+      //       }
+      //     }}
+      //   />
+      //   <Button color="white" aria-label="edit" justIcon round>
+      //     <Search />
+      //   </Button>
+      // </div> */}
+      // {/* <Button
+      //   color={window.innerWidth > 959 ? "transparent" : "white"}
+      //   justIcon={window.innerWidth > 959}
+      //   simple={!(window.innerWidth > 959)}
+      //   aria-label="Dashboard"
+      //   className={classes.buttonLink}
+      // >
+      //   <Dashboard className={classes.icons} />
+      //   <Hidden mdUp implementation="css">
+      //     <p className={classes.linkText}>Dashboard</p>
+      //   </Hidden>
+      // </Button> */}
+      // {/* <div className={classes.manager}>
+      //   <Button
+      //     color={window.innerWidth > 959 ? "transparent" : "white"}
+      //     justIcon={window.innerWidth > 959}
+      //     simple={!(window.innerWidth > 959)}
+      //     aria-owns={openNotification ? "notification-menu-list-grow" : null}
+      //     aria-haspopup="true"
+      //     onClick={handleClickNotification}
+      //     className={classes.buttonLink}
+      //   >
+      //     <Notifications className={classes.icons} />
+      //     <span className={classes.notifications}>5</span>
+      //     <Hidden mdUp implementation="css">
+      //       <p onClick={handleCloseNotification} className={classes.linkText}>
+      //         Notification
+      //       </p>
+      //     </Hidden>
+      //   </Button>
+      //   <Poppers
+      //     open={Boolean(openNotification)}
+      //     anchorEl={openNotification}
+      //     transition
+      //     disablePortal
+      //     className={
+      //       classNames({ [classes.popperClose]: !openNotification }) +
+      //       " " +
+      //       classes.popperNav
+      //     }
+      //   >
+      //     {({ TransitionProps, placement }) => (
+      //       <Grow
+      //         {...TransitionProps}
+      //         id="notification-menu-list-grow"
+      //         style={{
+      //           transformOrigin:
+      //             placement === "bottom" ? "center top" : "center bottom"
+      //         }}
+      //       >
+      //         <Paper>
+      //           <ClickAwayListener onClickAway={handleCloseNotification}>
+      //             <MenuList role="menu">
+      //               <MenuItem
+      //                 onClick={handleCloseNotification}
+      //                 className={classes.dropdownItem}
+      //               >
+      //                 Mike John responded to your email
+      //               </MenuItem>
+      //               <MenuItem
+      //                 onClick={handleCloseNotification}
+      //                 className={classes.dropdownItem}
+      //               >
+      //                 You have 5 new tasks
+      //               </MenuItem>
+      //               <MenuItem
+      //                 onClick={handleCloseNotification}
+      //                 className={classes.dropdownItem}
+      //               >
+      //                 You{"'"}re now friend with Andrew
+      //               </MenuItem>
+      //               <MenuItem
+      //                 onClick={handleCloseNotification}
+      //                 className={classes.dropdownItem}
+      //               >
+      //                 Another Notification
+      //               </MenuItem>
+      //               <MenuItem
+      //                 onClick={handleCloseNotification}
+      //                 className={classes.dropdownItem}
+      //               >
+      //                 Another One
+      //               </MenuItem>
+      //             </MenuList>
+      //           </ClickAwayListener>
+      //         </Paper>
+      //       </Grow>
+      //     )}
+      //   </Poppers>
+      // </div> */}
+      // {/* <div className={classes.manager}>
+      //   <Button
+      //     color={window.innerWidth > 959 ? "transparent" : "white"}
+      //     justIcon={window.innerWidth > 959}
+      //     simple={!(window.innerWidth > 959)}
+      //     aria-owns={openProfile ? "profile-menu-list-grow" : null}
+      //     aria-haspopup="true"
+      //     onClick={handleClickProfile}
+      //     className={classes.buttonLink}
+      //   >
+      //     <Person className={classes.icons} />
+      //     <Hidden mdUp implementation="css">
+      //       <p className={classes.linkText}>Profile</p>
+      //     </Hidden>
+      //   </Button>
+      //   <Poppers
+      //     open={Boolean(openProfile)}
+      //     anchorEl={openProfile}
+      //     transition
+      //     disablePortal
+      //     className={
+      //       classNames({ [classes.popperClose]: !openProfile }) +
+      //       " " +
+      //       classes.popperNav
+      //     }
+      //   >
+      //     {({ TransitionProps, placement }) => (
+      //       <Grow
+      //         {...TransitionProps}
+      //         id="profile-menu-list-grow"
+      //         style={{
+      //           transformOrigin:
+      //             placement === "bottom" ? "center top" : "center bottom"
+      //         }}
+      //       >
+      //         <Paper>
+      //           <ClickAwayListener onClickAway={handleCloseProfile}>
+      //             <MenuList role="menu">
+      //               <MenuItem
+      //                 onClick={handleCloseProfile}
+      //                 className={classes.dropdownItem}
+      //               >
+      //                 Profile
+      //               </MenuItem>
+      //               <MenuItem
+      //                 onClick={handleCloseProfile}
+      //                 className={classes.dropdownItem}
+      //               >
+      //                 Settings
+      //               </MenuItem>
+      //               <Divider light />
+      //               <MenuItem
+      //                 onClick={handleCloseProfile}
+      //                 className={classes.dropdownItem}
+      //               >
+      //                 Logout
+      //               </MenuItem>
+      //             </MenuList>
+      //           </ClickAwayListener>
+      //         </Paper>
+      //       </Grow>
+      //     )}
+      //   </Poppers>
+      // </div> */
   );
 }

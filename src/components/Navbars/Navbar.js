@@ -3,6 +3,7 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import Select from 'react-select';
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
@@ -18,6 +19,11 @@ import styles from "assets/jss/material-dashboard-react/components/headerStyle.j
 
 const useStyles = makeStyles(styles);
 
+const options = [
+  { value: 'chocolate', label: 'Chocolate' },
+  { value: 'strawberry', label: 'Strawberry' },
+  { value: 'vanilla', label: 'Vanilla' },
+];
 export default function Header(props) {
   const classes = useStyles();
   function makeBrand() {
@@ -35,29 +41,28 @@ export default function Header(props) {
     [" " + classes[color]]: color
   });
   return (
-  <div></div>
-    // <AppBar className={classes.appBar + appBarClasses}>
-    //   <Toolbar className={classes.container}>
-    //     <div className={classes.flex}>
-    //       {/* Here we create navbar brand, based on route name */}
-    //       <Button color="transparent" href="#" className={classes.title}>
-    //         {makeBrand()}
-    //       </Button>
-    //     </div>
-    //     <Hidden smDown implementation="css">
-    //       {props.rtlActive ? <RTLNavbarLinks /> : <AdminNavbarLinks />}
-    //     </Hidden>
-    //     <Hidden mdUp implementation="css">
-    //       <IconButton
-    //         color="inherit"
-    //         aria-label="open drawer"
-    //         onClick={props.handleDrawerToggle}
-    //       >
-    //         <Menu />
-    //       </IconButton>
-    //     </Hidden>
-    //   </Toolbar>
-    // </AppBar>
+    <AppBar className={classes.appBar + appBarClasses}>
+      <Toolbar className={classes.container}>
+        <div className={classes.flex}>
+          {/* Here we create navbar brand, based on route name */}
+          <Button color="transparent" href="#" className={classes.title}>
+            {makeBrand()}
+          </Button>
+        </div>
+        <Hidden smDown implementation="css">
+          {props.rtlActive ? <RTLNavbarLinks /> : <AdminNavbarLinks />}
+        </Hidden>
+        <Hidden mdUp implementation="css">
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={props.handleDrawerToggle}
+          >
+            <Menu />
+          </IconButton>
+        </Hidden>
+      </Toolbar>
+    </AppBar>
   );
 }
 
