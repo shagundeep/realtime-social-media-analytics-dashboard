@@ -19,6 +19,7 @@
     "react-bootstrap-daterangepicker": "^4.1.0",
     "react-chartist": "0.13.3",
     "react-chartjs-2": "^2.8.0",
+    "react-d3-cloud": "^0.7.0",
     "react-dom": "16.9.0",
     "react-dropdown": "^1.6.4",
     "react-google-maps": "9.4.5",
