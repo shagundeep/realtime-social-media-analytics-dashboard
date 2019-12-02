@@ -24,12 +24,6 @@ import Button from "components/CustomButtons/Button.js";
 import styles from "assets/jss/material-dashboard-react/components/headerLinksStyle.js";
 
 const useStyles = makeStyles(styles);
-const options = [
-  { value: 'last 3 months', label: 'last 3 months' },
-  { value: 'last 6 months', label: 'last 6 months' },
-  { value: 'last 1 year', label: 'last 1 year' },
-  { value: 'last 2 year', label: 'last 2 year' },
-];
 
 export default function AdminNavbarLinks() {
   const classes = useStyles();
@@ -55,16 +49,8 @@ export default function AdminNavbarLinks() {
   const handleCloseProfile = () => {
     setOpenProfile(null);
   };
- 
+
   return (
-    <div>
-      <Select 
-        value={0}
-        placeholder="Select Dates"
-        onChange={()=>{console.log("ppp")}}
-        options={options}
-      />
-      </div>
       // /* <div className={classes.searchWrapper}>
       //   <CustomInput
       //     formControlProps={{
@@ -235,5 +221,6 @@ export default function AdminNavbarLinks() {
       //     )}
       //   </Poppers>
       // </div> */
+      <></>
   );
 }

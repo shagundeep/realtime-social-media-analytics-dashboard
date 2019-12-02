@@ -40,14 +40,31 @@ export default function Header(props) {
   const appBarClasses = classNames({
     [" " + classes[color]]: color
   });
+
+  const selectoptions = [
+    { value: 'last 3 months', label: 'last 3 months' },
+    { value: 'last 6 months', label: 'last 6 months' },
+    { value: 'last 1 year', label: 'last 1 year' },
+    { value: 'last 2 year', label: 'last 2 year' },
+  ];
+  
   return (
     <AppBar className={classes.appBar + appBarClasses}>
       <Toolbar className={classes.container}>
         <div className={classes.flex}>
-          {/* Here we create navbar brand, based on route name */}
-          <Button color="transparent" href="#" className={classes.title}>
-            {makeBrand()}
-          </Button>
+          <div style={{float: 'left'}}>
+            <Button color="transparent" href="#" className={classes.title}>
+              {makeBrand()}
+            </Button>
+          </div>
+          <div style={{float: 'right',width: '300px',}}>
+            <Select 
+              value={0}
+              placeholder="Select Dates"
+              onChange={()=>{console.log("ppp")}}
+              options={selectoptions}
+            />
+          </div>
         </div>
         <Hidden smDown implementation="css">
           {props.rtlActive ? <RTLNavbarLinks /> : <AdminNavbarLinks />}
