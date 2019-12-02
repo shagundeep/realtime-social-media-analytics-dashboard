@@ -1,93 +1,99 @@
 import React from "react";
-import {
-  withScriptjs,
-  withGoogleMap,
-  GoogleMap,
-  Marker
-} from "react-google-maps";
+import {Chart} from "react-google-charts";
+import { makeStyles } from "@material-ui/core/styles";
 
-const CustomSkinMap = withScriptjs(
-  withGoogleMap(() => (
-    <GoogleMap
-      defaultZoom={13}
-      defaultCenter={{ lat: 40.748817, lng: -73.985428 }}
-      defaultOptions={{
-        scrollwheel: false,
-        zoomControl: true,
-        styles: [
-          {
-            featureType: "water",
-            stylers: [
-              { saturation: 43 },
-              { lightness: -11 },
-              { hue: "#0088ff" }
-            ]
-          },
-          {
-            featureType: "road",
-            elementType: "geometry.fill",
-            stylers: [
-              { hue: "#ff0000" },
-              { saturation: -100 },
-              { lightness: 99 }
-            ]
-          },
-          {
-            featureType: "road",
-            elementType: "geometry.stroke",
-            stylers: [{ color: "#808080" }, { lightness: 54 }]
-          },
-          {
-            featureType: "landscape.man_made",
-            elementType: "geometry.fill",
-            stylers: [{ color: "#ece2d9" }]
-          },
-          {
-            featureType: "poi.park",
-            elementType: "geometry.fill",
-            stylers: [{ color: "#ccdca1" }]
-          },
-          {
-            featureType: "road",
-            elementType: "labels.text.fill",
-            stylers: [{ color: "#767676" }]
-          },
-          {
-            featureType: "road",
-            elementType: "labels.text.stroke",
-            stylers: [{ color: "#ffffff" }]
-          },
-          { featureType: "poi", stylers: [{ visibility: "off" }] },
-          {
-            featureType: "landscape.natural",
-            elementType: "geometry.fill",
-            stylers: [{ visibility: "on" }, { color: "#b8cb93" }]
-          },
-          { featureType: "poi.park", stylers: [{ visibility: "on" }] },
-          {
-            featureType: "poi.sports_complex",
-            stylers: [{ visibility: "on" }]
-          },
-          { featureType: "poi.medical", stylers: [{ visibility: "on" }] },
-          {
-            featureType: "poi.business",
-            stylers: [{ visibility: "simplified" }]
-          }
-        ]
-      }}
-    >
-      <Marker position={{ lat: 40.748817, lng: -73.985428 }} />
-    </GoogleMap>
-  ))
-);
+import Card from "components/Card/Card.js";
+import CardHeader from "components/Card/CardHeader.js";
+import CardBody from "components/Card/CardBody.js";
+
+const styles = {
+  cardCategoryWhite: {
+    "&,& a,& a:hover,& a:focus": {
+      color: "rgba(255,255,255,.62)",
+      margin: "0",
+      fontSize: "14px",
+      marginTop: "0",
+      marginBottom: "0"
+    },
+    "& a,& a:hover,& a:focus": {
+      color: "#FFFFFF"
+    }
+  },
+  cardTitleWhite: {
+    color: "#FFFFFF",
+    marginTop: "0px",
+    minHeight: "auto",
+    fontWeight: "300",
+    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
+    marginBottom: "3px",
+    textDecoration: "none",
+    "& small": {
+      color: "#777",
+      fontSize: "65%",
+      fontWeight: "400",
+      lineHeight: "1"
+    }
+  }
+};
+
+const data = [
+  ["State Code", "State", "Active Users"],
+  ["IN-UT","Uttarakhand", 200],
+  ["IN-JK","Jammu Kashmir", 700],
+  ["IN-DN","Dadra and Nagar Haveli", 400],
+  ["IN-DD","Daman and Diu", 500],
+  ["IN-HR","Haryana",300],
+  ["IN-AS","Assam", 600],
+  ["IN-BR","Bihar", 700]
+];
+
+const options = {
+  region: 'IN',
+  resolution: 'provinces',
+  displayMode: 'regions',
+  colors: ['#CD5C5C','#800000']
+};
+
+const useStyles = makeStyles(styles);
+
+class UserMap extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <Chart
+          chartEvents={[
+            {
+              eventName: "select",
+              callback: ({ chartWrapper }) => {
+                const chart = chartWrapper.getChart();
+                const selection = chart.getSelection();
+                if (selection.length === 0) return;
+                const region = data[selection[0].row + 1];
+                console.log("Selected : " + region);
+              }
+            }
+          ]}
+          chartType="GeoChart"
+          width="100%"
+          height="400px"
+          data={data}
+          options={options}
+        />
+      </div>
+    );
+  }
+}
 
 export default function Maps() {
+  const classes = useStyles();
   return (
-    <CustomSkinMap
-      googleMapURL="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"
-      loadingElement={<div style={{ height: `100%` }} />}
-      containerElement={<div style={{ height: `100vh` }} />}
-      mapElement={<div style={{ height: `100%` }} />}
-    />
+    <Card>
+      <CardHeader color="primary">
+        <h4 className={classes.cardTitleWhite}>Users Heat Map</h4>
+      </CardHeader>
+      <CardBody>
+        <UserMap/>
+      </CardBody>
+    </Card>
   );
 }
