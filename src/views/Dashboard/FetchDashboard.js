@@ -33,13 +33,13 @@ class FetchDashboard extends Component {
             <>
             <div>
               <ButtonToolbar>
-              <Button variant="primary" style={{width:"200px", margin :"15px", marginLeft: "90px",height:'50px',
+              <Button variant="primary" style={{width:"200px", margin :"15px", marginLeft: "90px",height:'40px',
                 backgroundColor:'#00acc1',alignItems:'center',justifyContent:'center',borderRadius:15, color:'#FFFFFF',fontSize:'16px'}} >3 Months</Button>
-              <Button variant="secondary" style={{width:"200px", margin :"15px",height:'50px',
+              <Button variant="secondary" style={{width:"200px", margin :"15px",height:'40px',
                 backgroundColor:'#00acc1',alignItems:'center',justifyContent:'center',borderRadius:15, color:'#FFFFFF',fontSize:'16px'}}>6 Months</Button>
-              <Button variant="success" style={{width:"200px", margin :"15px",height:'50px',
+              <Button variant="success" style={{width:"200px", margin :"15px",height:'40px',
                 backgroundColor:'#00acc1',alignItems:'center',justifyContent:'center',borderRadius:15, color:'#FFFFFF',fontSize:'16px'}}>1 Year</Button>
-              <Button variant="warning" style={{width:"200px", margin :"15px",height:'50px',
+              <Button variant="warning" style={{width:"200px", margin :"15px",height:'40px',
                 backgroundColor:'#00acc1',alignItems:'center',justifyContent:'center',borderRadius:15, color:'#FFFFFF',fontSize:'16px'}}>2 Year</Button>
               </ButtonToolbar>
             </div>
