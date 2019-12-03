@@ -6,7 +6,7 @@ class FetchDashboard extends Component {
     constructor() {
         super();
         this.state = {
-            keywords: []
+            users: []
         };
     }
 
@@ -33,10 +33,14 @@ class FetchDashboard extends Component {
             <>
             <div>
               <ButtonToolbar>
-              <Button variant="primary" style={{width:"200px", margin :"15px", marginLeft: "90px"}} >3 month</Button>
-              <Button variant="secondary" style={{width:"200px", margin :"15px"}}>6 month</Button>
-              <Button variant="success" style={{width:"200px", margin :"15px"}}>1 year</Button>
-              <Button variant="warning" style={{width:"200px", margin :"15px"}}>2 year</Button>
+              <Button variant="primary" style={{width:"200px", margin :"15px", marginLeft: "90px",height:'50px',
+                backgroundColor:'#00acc1',alignItems:'center',justifyContent:'center',borderRadius:15, color:'#FFFFFF',fontSize:'16px'}} >3 Months</Button>
+              <Button variant="secondary" style={{width:"200px", margin :"15px",height:'50px',
+                backgroundColor:'#00acc1',alignItems:'center',justifyContent:'center',borderRadius:15, color:'#FFFFFF',fontSize:'16px'}}>6 Months</Button>
+              <Button variant="success" style={{width:"200px", margin :"15px",height:'50px',
+                backgroundColor:'#00acc1',alignItems:'center',justifyContent:'center',borderRadius:15, color:'#FFFFFF',fontSize:'16px'}}>1 Year</Button>
+              <Button variant="warning" style={{width:"200px", margin :"15px",height:'50px',
+                backgroundColor:'#00acc1',alignItems:'center',justifyContent:'center',borderRadius:15, color:'#FFFFFF',fontSize:'16px'}}>2 Year</Button>
               </ButtonToolbar>
             </div>
             <Dashboard/>
