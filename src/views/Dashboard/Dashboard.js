@@ -93,7 +93,7 @@ const dataPie = {
 const dataPolar = {
   datasets: [
     {
-      data: [11, 16, 7, 3, 14,3,45,4,12,23,12,32],
+      data: [4,20,34,1,0,4,14,66,16,85,356],
       backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360",'#FB9E00', '#808900', '#194D33', '#0C797D', '#0062B1', '#653294', '#AB149E'],
       label: "My dataset" // for legend
     }
@@ -142,7 +142,7 @@ export default function Dashboard(props) {
                 <Icon>content_copy</Icon>
               </CardIcon>
               <p className={classes.cardCategory}>Terror posts</p>
-              <h3 className={classes.cardTitle}>{props.terrorPosts}</h3>
+              <h4 className={classes.cardTitle}>{props.terrorPosts} / {props.totalPosts}</h4>
             </CardHeader>
             <CardFooter stats>
             <div className={classes.stats}>
@@ -220,7 +220,7 @@ export default function Dashboard(props) {
             <CardHeader color="warning">
               <ChartistGraph
                 className="ct-chart"
-                data={emailsSubscriptionChart.data}
+                data={props.usersBarGraph.data}
                 type="Bar"
                 options={emailsSubscriptionChart.options}
                 responsiveOptions={emailsSubscriptionChart.responsiveOptions}
