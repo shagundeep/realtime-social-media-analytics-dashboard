@@ -37,14 +37,14 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
-export default function UserProfile() {
+export default function UserProfile(props) {
   const classes = useStyles();
   return (
     <div>
       <GridItem>
           <Card>
             <CardHeader color="warning">
-              <h4 className={classes.cardTitleWhite}>Active users</h4>
+              <h4 className={classes.cardTitleWhite}>Active users of {props.state}</h4>
               <p className={classes.cardCategoryWhite}>
                 Active users on terror related posts
               </p>
@@ -54,15 +54,8 @@ export default function UserProfile() {
               page={"userProfile"}
               clickable={false}
                 tableHeaderColor="warning"
-                tableHead={["ID", "Name", "Salary", "Country","People"]}
-                tableData={[
-                  ["1", "Dakota Rice", "$36,738", "Niger"],
-                  ["2", "Minerva Hooper", "$23,789", "Curaçao"],
-                  ["3", "Sage Rodriguez", "$56,142", "Netherlands"],
-                  ["4", "Philip Chaney", "$38,735", "Korea, South"],
-                  ["5","Pranjali","$88,988","jjj","pp"],
-                  ["6","Piii","ggg","ppp","999"]
-                ]}
+                tableHead={["S.No.", "Name", "FBLink"]}
+                tableData={props.userData}
               />
             </CardBody>
           </Card>

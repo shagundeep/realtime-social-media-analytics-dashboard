@@ -7,6 +7,7 @@ class FetchDashboard extends Component {
         super();
         this.state = {
             users: null,
+            state: null,
             dateRange: null,
             activeUsers: null,
             usersBarGraph:null,
@@ -21,7 +22,7 @@ class FetchDashboard extends Component {
     }
 
     componentWillMount() { 
-      this.setState({activeUsers: 10,terrorPosts:10,totalPosts:20,reactions:20,comments:10,reactionsPieChart:{
+      this.setState({activeUsers: 10,state: "Last 3 months",terrorPosts:10,totalPosts:20,reactions:20,comments:10,reactionsPieChart:{
         labels: ["Haha", "Angry", "Like", "Love", "Wow"],
         datasets: [
           {
@@ -49,7 +50,7 @@ class FetchDashboard extends Component {
 
     toggleButton1State = () => {
       console.log("hi1")
-      this.setState({activeUsers: 10,terrorPosts:10,totalPosts:20,reactions:20,comments:10,reactionsPieChart: {
+      this.setState({activeUsers: 10,state: "Last 3 months",terrorPosts:10,totalPosts:20,reactions:20,comments:10,reactionsPieChart: {
         labels: ["Haha", "Angry", "Like", "Love", "Wow"],
         datasets: [
           {
@@ -76,19 +77,19 @@ class FetchDashboard extends Component {
     }
 
     toggleButton2State = () => {
-      this.setState({activeUsers: 20,terrorPosts:20,totalPosts:30,reactions:30,comments:20,reactionsPieChart: [300, 50, 100, 40, 120]});
+      this.setState({activeUsers: 20,state: "Last 6 months",terrorPosts:20,totalPosts:30,reactions:30,comments:20,reactionsPieChart: [300, 50, 100, 40, 120]});
     }
 
     toggleButton3State = () => {
-      this.setState({activeUsers: 30,terrorPosts:30,totalPosts:30,reactions:30,comments:30});
+      this.setState({activeUsers: 30,state: "Last 1 year",terrorPosts:30,totalPosts:30,reactions:30,comments:30});
     }
 
     toggleButton4State = () => {
-      this.setState({activeUsers: 40,terrorPosts:40,totalPosts:40,reactions:40,comments:40});
+      this.setState({activeUsers: 40,state: "Last 2 years",terrorPosts:40,totalPosts:40,reactions:40,comments:40});
     }
 
     render() {
-      const {activeUsers,terrorPosts,totalPosts,reactions,comments,reactionsPieChart}=this.state;
+      const {activeUsers,terrorPosts,totalPosts,reactions,comments,reactionsPieChart,state}=this.state;
         return(
             <>
             <div>
@@ -103,7 +104,7 @@ class FetchDashboard extends Component {
                 backgroundColor:'#00acc1',alignItems:'center',justifyContent:'center',borderRadius:15, color:'#FFFFFF',fontSize:'16px'}}>2 Year</Button>
               </ButtonToolbar>
             </div>
-            <Dashboard reactionsPieChart={reactionsPieChart} activeUsers={activeUsers} terrorPosts={terrorPosts} totalPosts={totalPosts} reactions={reactions} comments={comments}/>
+            <Dashboard reactionsPieChart={reactionsPieChart}  state ={state} activeUsers={activeUsers} terrorPosts={terrorPosts} totalPosts={totalPosts} reactions={reactions} comments={comments}/>
             </>
         )
     }
