@@ -19,6 +19,7 @@ import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.js";
 // core components/views for RTL layout
 import RTLPage from "views/RTLPage/RTLPage.js";
 import FetchDashboard from "views/Dashboard/FetchDashboard";
+import FetchUser from "views/UserProfile/FetchUser";
 
 const dashboardRoutes = [
   {
@@ -34,7 +35,7 @@ const dashboardRoutes = [
     name: "User Profile",
     rtlName: "ملف تعريفي للمستخدم",
     icon: Person,
-    component: UserProfile,
+    component: FetchUser,
     layout: "/admin"
   },
   {

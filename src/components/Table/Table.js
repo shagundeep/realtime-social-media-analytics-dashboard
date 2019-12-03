@@ -42,9 +42,9 @@ export default function CustomTable(props) {
                   count=(count+1)%3
                   return (
                     <TableCell className={classes.tableCell} key={key} >
-                     {clickable && count===0 && <a href={prop} >  {prop}</a>}
-                     {clickable&& count!==0 && prop}
-                     {!clickable && prop}
+                     { count===0 && <a href={prop} >  {prop}</a>}
+                     {count!==0 && prop}
+                     
                     </TableCell>
                   );
                 })}

@@ -130,7 +130,7 @@ export default function Dashboard(props) {
             <CardFooter stats>
               <div className={classes.stats}>
             <DateRange />
-                Last 3 months
+                {props.state}
               </div>
             </CardFooter>
           </Card>
@@ -147,7 +147,7 @@ export default function Dashboard(props) {
             <CardFooter stats>
             <div className={classes.stats}>
             <DateRange />
-                Last 3 months
+            {props.state}
               </div>
             </CardFooter>
           </Card>
@@ -164,7 +164,7 @@ export default function Dashboard(props) {
             <CardFooter stats>
             <div className={classes.stats}>
             <DateRange />
-                Last 3 months
+            {props.state}
               </div>
             </CardFooter>
           </Card>
@@ -181,7 +181,7 @@ export default function Dashboard(props) {
             <CardFooter stats>
             <div className={classes.stats}>
             <DateRange />
-                Last 3 months
+            {props.state}
               </div>
             </CardFooter>
           </Card>
@@ -234,7 +234,7 @@ export default function Dashboard(props) {
             <CardFooter chart>
             <div className={classes.stats}>
             <DateRange />
-                Last 3 months
+            {props.state}
               </div>
             </CardFooter>
           </Card>
@@ -254,7 +254,7 @@ export default function Dashboard(props) {
             </CardHeader>
             <CardBody>
               <h4 className={classes.cardTitle}>Reactions on posts</h4>
-              <p className={classes.cardCategory}>Last 1 month</p>
+              <p className={classes.cardCategory}>{props.state}</p>
             </CardBody>
           </Card>
         </GridItem>

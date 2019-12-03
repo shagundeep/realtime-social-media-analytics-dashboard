@@ -58,6 +58,7 @@ class FetchDashboard extends Component {
         super();
         this.state = {
             users: null,
+            state: null,
             dateRange: null,
             activeUsers: null,
             usersBarGraph:null,
@@ -93,8 +94,7 @@ class FetchDashboard extends Component {
         reactionsChart.datasets[0].data = data;
         barChart.data.labels = labels;
         barChart.data.series = series;
-        setTimeout("Loading",10000);
-      this.setState({activeUsers: 6676,terrorPosts:541,totalPosts:3730,reactions:627203,comments:12806,
+        this.setState({activeUsers: 6676,terrorPosts:541,totalPosts:3730,reactions:310171,comments:12806,
         reactionsPieChart: reactionsChart,usersBarGraph: barChart});
     }
 
