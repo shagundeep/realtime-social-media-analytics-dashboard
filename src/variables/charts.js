@@ -91,7 +91,7 @@ const emailsSubscriptionChart = {
       labelWrap: true
     },
     low: 0,
-    high: 1000,
+    high: 300,
     chartPadding: {
       top: 0,
       right: 5,
