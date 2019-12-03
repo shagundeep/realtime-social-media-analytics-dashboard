@@ -18,6 +18,7 @@ import NotificationsPage from "views/Notifications/Notifications.js";
 import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.js";
 // core components/views for RTL layout
 import RTLPage from "views/RTLPage/RTLPage.js";
+import FetchDashboard from "views/Dashboard/FetchDashboard";
 
 const dashboardRoutes = [
   {
@@ -25,7 +26,7 @@ const dashboardRoutes = [
     name: "Real Time Monitoring terror related activities",
     rtlName: "لوحة القيادة",
     icon: Dashboard,
-    component: DashboardPage,
+    component: FetchDashboard,
     layout: "/admin"
   },
   {
