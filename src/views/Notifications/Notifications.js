@@ -2,6 +2,7 @@
 import React from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
+import FetchKeywords from "./FetchKeywords"
 
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
@@ -59,13 +60,15 @@ const useStyles = makeStyles(styles);
 export default function Notifications() {
   const classes = useStyles();
   return (
-    <Card>
-      <CardHeader color="primary">
-        <h4 className={classes.cardTitleWhite}>Keywords Word Cloud</h4>
-      </CardHeader>
-      <CardBody>
-        <WordCloud data={keywordsdata}  fontSizeMapper={fontSizeMapper} rotate={rotate}/>
-      </CardBody>
-    </Card>
+    <>
+      <Card>
+        <CardHeader color="primary">
+          <h4 className={classes.cardTitleWhite}>Keywords Word Cloud</h4>
+        </CardHeader>
+        <CardBody>
+          <FetchKeywords/>
+        </CardBody>
+      </Card>
+    </>
   );
 }
