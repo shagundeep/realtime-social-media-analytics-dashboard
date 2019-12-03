@@ -57,14 +57,7 @@ export default function Header(props) {
               {makeBrand()}
             </Button>
           </div>
-          <div style={{float: 'right',width: '300px',}}>
-            <Select 
-              value={0}
-              placeholder="Select Dates"
-              onChange={()=>{console.log("ppp")}}
-              options={selectoptions}
-            />
-          </div>
+         
         </div>
         <Hidden smDown implementation="css">
           {props.rtlActive ? <RTLNavbarLinks /> : <AdminNavbarLinks />}
