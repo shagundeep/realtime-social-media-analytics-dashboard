@@ -121,19 +121,15 @@ export default function Dashboard() {
             <CardIcon color="info">
             <Accessibility />
               </CardIcon>
-              <p className={classes.cardCategory}>Number of active users</p>
+              <p className={classes.cardCategory}>Active users</p>
               <h3 className={classes.cardTitle}>
-                78/100 
+                78
               </h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
-                <Danger>
-                  <Warning />
-                </Danger>
-                <a href="#pablo" onClick={e => e.preventDefault()}>
-                  Get more space
-                </a>
+            <DateRange />
+                Last 3 months
               </div>
             </CardFooter>
           </Card>
@@ -144,13 +140,13 @@ export default function Dashboard() {
             <CardIcon color="warning">
                 <Icon>content_copy</Icon>
               </CardIcon>
-              <p className={classes.cardCategory}>Number of terror related posts</p>
-              <h3 className={classes.cardTitle}>60</h3>
+              <p className={classes.cardCategory}>Terror posts</p>
+              <h3 className={classes.cardTitle}>60/100</h3>
             </CardHeader>
             <CardFooter stats>
-              <div className={classes.stats}>
-                <DateRange />
-                Last 24 Hours
+            <div className={classes.stats}>
+            <DateRange />
+                Last 3 months
               </div>
             </CardFooter>
           </Card>
@@ -161,13 +157,13 @@ export default function Dashboard() {
               <CardIcon color="danger">
                 <Icon>info_outline</Icon>
               </CardIcon>
-              <p className={classes.cardCategory}>Fixed Issues</p>
+              <p className={classes.cardCategory}>Total Comments</p>
               <h3 className={classes.cardTitle}>75</h3>
             </CardHeader>
             <CardFooter stats>
-              <div className={classes.stats}>
-                <LocalOffer />
-                Tracked from Github
+            <div className={classes.stats}>
+            <DateRange />
+                Last 3 months
               </div>
             </CardFooter>
           </Card>
@@ -178,13 +174,13 @@ export default function Dashboard() {
               <CardIcon color="info">
                 <Accessibility />
               </CardIcon>
-              <p className={classes.cardCategory}>Followers</p>
+              <p className={classes.cardCategory}>Total Reactions</p>
               <h3 className={classes.cardTitle}>+245</h3>
             </CardHeader>
             <CardFooter stats>
-              <div className={classes.stats}>
-                <Update />
-                Just Updated
+            <div className={classes.stats}>
+            <DateRange />
+                Last 3 months
               </div>
             </CardFooter>
           </Card>
@@ -235,8 +231,9 @@ export default function Dashboard() {
               <p className={classes.cardCategory}>Users reactring most on terror related posts</p>
             </CardBody>
             <CardFooter chart>
-              <div className={classes.stats}>
-                <AccessTime /> campaign sent 2 days ago
+            <div className={classes.stats}>
+            <DateRange />
+                Last 3 months
               </div>
             </CardFooter>
           </Card>
