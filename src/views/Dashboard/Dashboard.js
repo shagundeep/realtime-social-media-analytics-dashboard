@@ -108,10 +108,11 @@ const defaultProps = {
   },
   zoom: 11
 };
-  
 
-export default function Dashboard() {
+export default function Dashboard(props) {
   const classes = useStyles();
+  //dataPie.datasets.data=props.reactionsPieChart;
+  console.log(dataPie.datasets.data)
   return (
     <div>
       <GridContainer>
@@ -123,7 +124,7 @@ export default function Dashboard() {
               </CardIcon>
               <p className={classes.cardCategory}>Active users</p>
               <h3 className={classes.cardTitle}>
-                78
+                {props.activeUsers}
               </h3>
             </CardHeader>
             <CardFooter stats>
@@ -141,7 +142,7 @@ export default function Dashboard() {
                 <Icon>content_copy</Icon>
               </CardIcon>
               <p className={classes.cardCategory}>Terror posts</p>
-              <h3 className={classes.cardTitle}>60/100</h3>
+              <h3 className={classes.cardTitle}>{props.terrorPosts}</h3>
             </CardHeader>
             <CardFooter stats>
             <div className={classes.stats}>
@@ -158,7 +159,7 @@ export default function Dashboard() {
                 <Icon>info_outline</Icon>
               </CardIcon>
               <p className={classes.cardCategory}>Total Comments</p>
-              <h3 className={classes.cardTitle}>75</h3>
+              <h3 className={classes.cardTitle}>{props.comments}</h3>
             </CardHeader>
             <CardFooter stats>
             <div className={classes.stats}>
@@ -175,7 +176,7 @@ export default function Dashboard() {
                 <Accessibility />
               </CardIcon>
               <p className={classes.cardCategory}>Total Reactions</p>
-              <h3 className={classes.cardTitle}>+245</h3>
+              <h3 className={classes.cardTitle}>{props.reactions}</h3>
             </CardHeader>
             <CardFooter stats>
             <div className={classes.stats}>
@@ -241,7 +242,7 @@ export default function Dashboard() {
         <GridItem xs={12} sm={12} md={6}>
         <Card chart>
             <CardHeader >
-            <Pie data={dataPie} options={{ responsive: true }} />
+            <Pie data={props.reactionsPieChart} options={{ responsive: true }} />
             {/* <PieChart className=""
             data={[
             { title: 'hhh', value: 10, color: '#E38627', label: "Direct"},
