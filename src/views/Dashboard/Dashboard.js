@@ -274,7 +274,7 @@ export default function Dashboard() {
       </GridItem>
       </GridContainer>
       {/*Displaying Heat Map*/}
-      <Maps/>
+      {/*<Maps/>*/}
       {/* <GridContainer>
         <GridItem xs={12} sm={12} md={6}>
           <CustomTabs
