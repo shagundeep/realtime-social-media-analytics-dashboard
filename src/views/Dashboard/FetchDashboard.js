@@ -83,8 +83,10 @@ class FetchDashboard extends Component {
         reactionsChart.datasets[0].data = data;
         barChart.data.labels = labels;
         barChart.data.series = series;
-        this.setState({activeUsers: 396,terrorPosts:463,totalPosts:3173,reactions:185132,comments:357,
-        reactionsPieChart: reactionsChart, usersBarGraph: barChart});
+        setTimeout(() => {
+          this.setState({activeUsers: 396,terrorPosts:463,totalPosts:3173,reactions:185132,comments:357,
+            reactionsPieChart: reactionsChart, usersBarGraph: barChart});
+        },700);
     }
 
     toggleButton2State = () => {
@@ -94,8 +96,11 @@ class FetchDashboard extends Component {
         reactionsChart.datasets[0].data = data;
         barChart.data.labels = labels;
         barChart.data.series = series;
-        this.setState({activeUsers: 6676,terrorPosts:541,totalPosts:3730,reactions:310171,comments:12806,
-        reactionsPieChart: reactionsChart,usersBarGraph: barChart});
+        // api call
+        setTimeout(() => {
+          this.setState({activeUsers: 6676,terrorPosts:541,totalPosts:3730,reactions:310171,comments:12806,
+            reactionsPieChart: reactionsChart,usersBarGraph: barChart});
+        },1500);
     }
 
     toggleButton3State = () => {
@@ -105,8 +110,10 @@ class FetchDashboard extends Component {
         reactionsChart.datasets[0].data = data;
         barChart.data.labels = labels;
         barChart.data.series = series;
-      this.setState({activeUsers: 6676,terrorPosts:600,totalPosts:4109,reactions:627203,comments:12806,
-        reactionsPieChart: reactionsChart,usersBarGraph: barChart});
+        setTimeout(() => {
+          this.setState({activeUsers: 6676,terrorPosts:600,totalPosts:4109,reactions:627203,comments:12806,
+            reactionsPieChart: reactionsChart,usersBarGraph: barChart});
+        },2500);
     }
 
     // toggleButton4State = () => {
