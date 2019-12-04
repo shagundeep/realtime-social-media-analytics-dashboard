@@ -59,17 +59,17 @@ export default function TableList() {
               tableHeaderColor="primary"
               tableHead={["News Page Name", "Number of posts", "FB Link"]}
               tableData={[
-                ["Times Now", "22","https://mdbootstrap.com/previews/free-templates/react-admin-dashboard/"],
-                ["News 18", "22", "Sinaai-Waas"],
-                ["Jand K now", "22", "Baileux"],
-                ["aaj tak", "22", "South"],
-                ["ABP News", "22", "Feldkirchen in Kärnten"],
-                ["Dainik Jagran", "22", "Gloucester"],
-                ["Channel 4 news", "22", "Gloucester"],
-                ["greater kashmir", "22", "Gloucester"],
-                ["current news service", "22", "Gloucester"],
-                ["Kashmir monitor", "22", "Gloucester"],
-                ["India Today","ggg"]
+                ["Times Now", "581","https://www.facebook.com/Timesnow/"],
+                ["News 18", "658", "https://www.facebook.com/cnnnews18/"],
+                ["Jand K now", "668", "https://www.facebook.com/jandknow/"],
+                ["aaj tak", "10", "https://www.facebook.com/aajtak/"],
+                ["ABP News", "461", "https://www.facebook.com/abpnews/"],
+                ["Dainik Jagran", "669", "https://www.facebook.com/dainikjagran/"],
+                ["Channel 4 news", "460", "https://www.facebook.com/Channel4News/"],
+                ["greater kashmir", "462", "https://www.facebook.com/DailyGreaterKashmir/"],
+                ["current news service", "659", "https://www.facebook.com/cnaonweb/"],
+                ["Kashmir monitor", "535", "https://www.facebook.com/KashmirMonitor/"],
+                ["India Today","319","https://www.facebook.com/IndiaToday/"]
               ]}
             />
           </CardBody>
