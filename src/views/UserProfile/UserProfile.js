@@ -54,7 +54,7 @@ export default function UserProfile(props) {
               page={"userProfile"}
               clickable={false}
                 tableHeaderColor="warning"
-                tableHead={["S.No.", "Name", "FBLink"]}
+                tableHead={["S.No.", "Name", "Total Comments","FBLink"]}
                 tableData={props.userData}
               />
             </CardBody>

@@ -14,7 +14,7 @@ const useStyles = makeStyles(styles);
 var count=0;
 export default function CustomTable(props) {
   const classes = useStyles();
-  const { tableHead, tableData, tableHeaderColor, clickable} = props;
+  const { tableHead, tableData, tableHeaderColor, page} = props;
   return (
     <div className={classes.tableResponsive}>
       <Table className={classes.table}>
@@ -36,10 +36,11 @@ export default function CustomTable(props) {
         ) : null}
         <TableBody>
           {tableData.map((prop, key) => {
+            count=0;
             return (
               <TableRow key={key} className={classes.tableBodyRow}>
                 {prop.map((prop, key) => {
-                  count=(count+1)%3
+                  page!=="userProfile" ?count=(count+1)%3:count=(count+1)%4;
                   return (
                     <TableCell className={classes.tableCell} key={key} >
                      { count===0 && <a href={prop} >  {prop}</a>}
