@@ -38,13 +38,9 @@ const styles = {
 
 const data = [
   ["State Code", "State", "Active Users"],
-  ["IN-UT","Uttarakhand", 200],
-  ["IN-JK","Jammu Kashmir", 700],
-  ["IN-DN","Dadra and Nagar Haveli", 400],
-  ["IN-DD","Daman and Diu", 500],
-  ["IN-HR","Haryana",300],
-  ["IN-AS","Assam", 600],
-  ["IN-BR","Bihar", 700]
+  ["IN-JK","Jammu Kashmir", 3],
+  ["IN-MH","Maharashtra", 1],
+  ["IN-HP","Himachal Pradesh", 1]
 ];
 
 const options = {
