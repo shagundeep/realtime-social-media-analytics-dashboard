@@ -72,7 +72,7 @@ class FetchDashboard extends Component {
     }
     
     componentWillMount() { 
-      this.setState({activeUsers: 396,terrorPosts:463,totalPosts:3173,reactions:185132,comments:13069,
+      this.setState({activeUsers: 396,state:"Last 3 months",terrorPosts:463,totalPosts:3173,reactions:185132,comments:13069,
         reactionsPieChart: reactionsChart,usersBarGraph: barChart});
     }
 
@@ -84,7 +84,7 @@ class FetchDashboard extends Component {
         barChart.data.labels = labels;
         barChart.data.series = series;
         setTimeout(() => {
-          this.setState({activeUsers: 396,terrorPosts:463,totalPosts:3173,reactions:185132,comments:357,
+          this.setState({activeUsers: 396,state:"Last 3 months",terrorPosts:463,totalPosts:3173,reactions:185132,comments:357,
             reactionsPieChart: reactionsChart, usersBarGraph: barChart});
         },700);
     }
@@ -98,7 +98,7 @@ class FetchDashboard extends Component {
         barChart.data.series = series;
         // api call
         setTimeout(() => {
-          this.setState({activeUsers: 6676,terrorPosts:541,totalPosts:3730,reactions:310171,comments:12806,
+          this.setState({activeUsers: 6676,state:"Last 6 months",terrorPosts:541,totalPosts:3730,reactions:310171,comments:12806,
             reactionsPieChart: reactionsChart,usersBarGraph: barChart});
         },1500);
     }
@@ -111,7 +111,7 @@ class FetchDashboard extends Component {
         barChart.data.labels = labels;
         barChart.data.series = series;
         setTimeout(() => {
-          this.setState({activeUsers: 6676,terrorPosts:600,totalPosts:4109,reactions:627203,comments:12806,
+          this.setState({activeUsers: 6676,state:"Last 1 year",terrorPosts:600,totalPosts:4109,reactions:627203,comments:12806,
             reactionsPieChart: reactionsChart,usersBarGraph: barChart});
         },2500);
     }
@@ -121,7 +121,7 @@ class FetchDashboard extends Component {
     // }
 
     render() {
-      const {activeUsers,terrorPosts,totalPosts,reactions,comments,reactionsPieChart,usersBarGraph}=this.state;
+      const {activeUsers,terrorPosts,totalPosts,reactions,comments,reactionsPieChart,usersBarGraph,state}=this.state;
         return(
             <>
             <div>
@@ -133,7 +133,7 @@ class FetchDashboard extends Component {
               {/*<Button onClick={this.toggleButton4State} variant="warning" style={buttonstyle}>2 Year</Button>*/}
               </ButtonToolbar>
             </div>
-              <Dashboard reactionsPieChart={reactionsPieChart} activeUsers={activeUsers} terrorPosts={terrorPosts} totalPosts={totalPosts} 
+              <Dashboard reactionsPieChart={reactionsPieChart} state={state} activeUsers={activeUsers} terrorPosts={terrorPosts} totalPosts={totalPosts} 
               reactions={reactions} comments={comments} usersBarGraph={usersBarGraph}/>
             </>
         )
