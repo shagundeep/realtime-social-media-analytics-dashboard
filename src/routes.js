@@ -24,7 +24,7 @@ import FetchUser from "views/UserProfile/FetchUser";
 const dashboardRoutes = [
   {
     path: "/dashboard",
-    name: "Real Time Monitoring terror related activities",
+    name: "Real Time Terror Activities Monitoring",
     rtlName: "لوحة القيادة",
     icon: Dashboard,
     component: FetchDashboard,

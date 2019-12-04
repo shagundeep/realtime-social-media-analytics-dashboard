@@ -93,7 +93,7 @@ const dataPie = {
 const dataPolar = {
   datasets: [
     {
-      data: [4,20,34,1,0,4,14,66,16,85,356],
+      data: [5,21,33,1,0,4,15,60,10,17,346,116],
       backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360",'#FB9E00', '#808900', '#194D33', '#0C797D', '#0062B1', '#653294', '#AB149E'],
       label: "My dataset" // for legend
     }
@@ -130,7 +130,7 @@ export default function Dashboard(props) {
             <CardFooter stats>
               <div className={classes.stats}>
             <DateRange />
-                {props.state}
+                {props.dateRange}
               </div>
             </CardFooter>
           </Card>
@@ -147,7 +147,7 @@ export default function Dashboard(props) {
             <CardFooter stats>
             <div className={classes.stats}>
             <DateRange />
-            {props.state}
+            {props.dateRange}
               </div>
             </CardFooter>
           </Card>
@@ -164,7 +164,7 @@ export default function Dashboard(props) {
             <CardFooter stats>
             <div className={classes.stats}>
             <DateRange />
-            {props.state}
+            {props.dateRange}
               </div>
             </CardFooter>
           </Card>
@@ -181,7 +181,7 @@ export default function Dashboard(props) {
             <CardFooter stats>
             <div className={classes.stats}>
             <DateRange />
-            {props.state}
+            {props.dateRange}
               </div>
             </CardFooter>
           </Card>
@@ -228,13 +228,13 @@ export default function Dashboard(props) {
               />
             </CardHeader>
             <CardBody>
-              <h4 className={classes.cardTitle}>Active users</h4>
-              <p className={classes.cardCategory}>Users reactring most on terror related posts</p>
+              <h4 className={classes.cardTitle}>Active Users</h4>
+              <p className={classes.cardCategory}>Users comments on terror related posts</p>
             </CardBody>
             <CardFooter chart>
             <div className={classes.stats}>
             <DateRange />
-            {props.state}
+            {props.dateRange}
               </div>
             </CardFooter>
           </Card>
@@ -265,7 +265,7 @@ export default function Dashboard(props) {
           <Polar data={dataPolar} options={{ responsive: true }}/>
         </CardHeader>
         <CardBody>
-            <h4 className={classes.cardTitle}> Number of active users monthly statement</h4>
+            <h4 className={classes.cardTitle}> Number of Terror Posts Monthly Statement</h4>
         </CardBody>
         </Card>
       </div>
