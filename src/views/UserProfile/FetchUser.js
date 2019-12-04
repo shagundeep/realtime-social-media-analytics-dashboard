@@ -96,6 +96,7 @@ class FetchUser extends Component {
       const {userData,state}=this.state;
         return(
             <>
+             <b><center>Current data is on {state}</center></b>
             <div>
               <ButtonToolbar>
               <Button onClick={this.toggleButton1State} variant="primary" style={{width:"200px", margin :"15px", marginLeft: "90px",height:'40px',

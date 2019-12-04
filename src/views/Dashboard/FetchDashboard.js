@@ -139,6 +139,7 @@ class FetchDashboard extends Component {
       const {activeUsers,terrorPosts,totalPosts,reactions,comments,reactionsPieChart,usersBarGraph,dateRange}=this.state;
         return(
             <>
+            <b><center>Current data is on {dateRange}</center></b>
             <div>
               <ButtonToolbar>
               <Button onClick={this.toggleButton1State} variant="primary" style={{width:"200px", margin :"15px", marginLeft: "90px",height:'40px',
