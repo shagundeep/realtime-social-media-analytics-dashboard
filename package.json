@@ -15,7 +15,7 @@
     "google-maps-react": "^2.0.2",
     "history": "4.9.0",
     "perfect-scrollbar": "1.4.0",
-    "pm2": "^4.2.0",
+    "pm2": "^6.0.10",
     "prop-types": "15.7.2",
     "react": "16.9.0",
     "react-bootstrap": "^1.0.0-beta.16",
